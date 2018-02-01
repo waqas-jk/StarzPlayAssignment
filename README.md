@@ -1,5 +1,7 @@
 # StarzPlayAssignment
 
+This application is developed using `Spring Boot` (version 1.5.10). 
+
 # Assumptions
    1. If value of level parameter is not `censored` or `uncensored`, then document does not provide any hint about the expected behaviour. For this scenario it is assumed, that functionality will be same as in case of `null/empty` level parameter.
    
