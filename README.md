@@ -1,16 +1,16 @@
 # StarzPlayAssignment
 
 # Assumptions
-   1. If values of level parameter is not `censored` or `uncensored`, then document do not provide any hint about the expected behaviour. For this scenario it is assumed that functionality will be same as in case of `null/empty` value.
+   1. If value of level parameter is not `censored` or `uncensored`, then document does not provide any hint about the expected behaviour. For this scenario it is assumed, that functionality will be same as in case of `null/empty` level parameter.
    
 # Enviroment Requirememnt
-  Following must be installed on system
+  Following must be installed on system:
   1. JDK 8 - `JAVA_HOME` should be set to the JDK8 installaion directory
   2. Maven 3.x - `M2_HOME` should be set to Maven installation direrctory.
-  3. To execute command commandline or terminal can be used.
+  3. To execute commands subsequent sections commandline or terminal can be used.
   
 # Build 
-  To build the project execute `mvn clean install` command in project's home directory.
+  To build the project execute `mvn clean install` command from project's home directory.
  
 # Deploy/Start 
 
