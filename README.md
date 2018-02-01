@@ -22,7 +22,7 @@ After successful build, application can be started using command `mvn spring-boo
   - Test can be compiled from commandline/terminal using command `mvn test-compile`.
   - Tests can be executed using command `mvn test`
   
-# Client To test REST services
+# Clients To test REST services
  Following clients can be used to test the REST webservice in application.
   - PostMan extension for Chrome (https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
   - SOAPUI (https://www.soapui.org)
