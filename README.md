@@ -11,10 +11,10 @@ This application is developed using `Spring Boot` (version 1.5.10).
   2. Maven 3.x - `M2_HOME` should be set to Maven installation direrctory.
   3. To execute commands subsequent sections commandline or terminal can be used.
   
-# Build 
+# Build
   To build the project execute `mvn clean install` command from project's home directory.
  
-# Deploy/Start 
+# Start Application 
 
 After successful build, application can be started using command `mvn spring-boot:run` from project's home directory.
 
