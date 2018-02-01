@@ -1,17 +1,11 @@
 
 package com.starzplay.assignment.model;
 
-import java.util.HashMap;
-import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -36,8 +30,6 @@ public class Credit {
     private String personId;
     @JsonProperty("personName")
     private String personName;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("characterName")
     public String getCharacterName() {
@@ -99,36 +91,9 @@ public class Credit {
         this.personName = personName;
     }
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("characterName", characterName).append("creditType", creditType).append("isInactive", isInactive).append("order", order).append("personId", personId).append("personName", personName).append("additionalProperties", additionalProperties).toString();
-    }
-
-    @Override
-    public int hashCode() {
-        return new HashCodeBuilder().append(creditType).append(characterName).append(order).append(isInactive).append(additionalProperties).append(personId).append(personName).toHashCode();
-    }
-
-    @Override
-    public boolean equals(Object other) {
-        if (other == this) {
-            return true;
-        }
-        if ((other instanceof Credit) == false) {
-            return false;
-        }
-        Credit rhs = ((Credit) other);
-        return new EqualsBuilder().append(creditType, rhs.creditType).append(characterName, rhs.characterName).append(order, rhs.order).append(isInactive, rhs.isInactive).append(additionalProperties, rhs.additionalProperties).append(personId, rhs.personId).append(personName, rhs.personName).isEquals();
+        return new ToStringBuilder(this).append("characterName", characterName).append("creditType", creditType).append("isInactive", isInactive).append("order", order).append("personId", personId).append("personName", personName).toString();
     }
 
 }

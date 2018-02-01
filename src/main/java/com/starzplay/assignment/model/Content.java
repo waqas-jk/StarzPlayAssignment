@@ -4,15 +4,13 @@ package com.starzplay.assignment.model;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
+
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -217,36 +215,9 @@ public class Content {
         this.protectionScheme = protectionScheme;
     }
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("bitrate", bitrate).append("duration", duration).append("format", format).append("height", height).append("language", language).append("width", width).append("id", id).append("guid", guid).append("assetTypeIds", assetTypeIds).append("assetTypes", assetTypes).append("downloadUrl", downloadUrl).append("releases", releases).append("serverId", serverId).append("streamingUrl", streamingUrl).append("protectionScheme", protectionScheme).append("additionalProperties", additionalProperties).toString();
-    }
-
-    @Override
-    public int hashCode() {
-        return new HashCodeBuilder().append(releases).append(width).append(streamingUrl).append(downloadUrl).append(format).append(assetTypeIds).append(guid).append(id).append(duration).append(assetTypes).append(height).append(additionalProperties).append(bitrate).append(serverId).append(language).append(protectionScheme).toHashCode();
-    }
-
-    @Override
-    public boolean equals(Object other) {
-        if (other == this) {
-            return true;
-        }
-        if ((other instanceof Content) == false) {
-            return false;
-        }
-        Content rhs = ((Content) other);
-        return new EqualsBuilder().append(releases, rhs.releases).append(width, rhs.width).append(streamingUrl, rhs.streamingUrl).append(downloadUrl, rhs.downloadUrl).append(format, rhs.format).append(assetTypeIds, rhs.assetTypeIds).append(guid, rhs.guid).append(id, rhs.id).append(duration, rhs.duration).append(assetTypes, rhs.assetTypes).append(height, rhs.height).append(additionalProperties, rhs.additionalProperties).append(bitrate, rhs.bitrate).append(serverId, rhs.serverId).append(language, rhs.language).append(protectionScheme, rhs.protectionScheme).isEquals();
+        return new ToStringBuilder(this).append("bitrate", bitrate).append("duration", duration).append("format", format).append("height", height).append("language", language).append("width", width).append("id", id).append("guid", guid).append("assetTypeIds", assetTypeIds).append("assetTypes", assetTypes).append("downloadUrl", downloadUrl).append("releases", releases).append("serverId", serverId).append("streamingUrl", streamingUrl).append("protectionScheme", protectionScheme).toString();
     }
 
 }

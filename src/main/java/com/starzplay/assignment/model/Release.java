@@ -1,17 +1,11 @@
 
 package com.starzplay.assignment.model;
 
-import java.util.HashMap;
-import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -27,8 +21,6 @@ public class Release {
     private String url;
     @JsonProperty("restrictionId")
     private String restrictionId;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("pid")
     public String getPid() {
@@ -60,36 +52,9 @@ public class Release {
         this.restrictionId = restrictionId;
     }
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("pid", pid).append("url", url).append("restrictionId", restrictionId).append("additionalProperties", additionalProperties).toString();
-    }
-
-    @Override
-    public int hashCode() {
-        return new HashCodeBuilder().append(additionalProperties).append(pid).append(restrictionId).append(url).toHashCode();
-    }
-
-    @Override
-    public boolean equals(Object other) {
-        if (other == this) {
-            return true;
-        }
-        if ((other instanceof Release) == false) {
-            return false;
-        }
-        Release rhs = ((Release) other);
-        return new EqualsBuilder().append(additionalProperties, rhs.additionalProperties).append(pid, rhs.pid).append(restrictionId, rhs.restrictionId).append(url, rhs.url).isEquals();
+        return new ToStringBuilder(this).append("pid", pid).append("url", url).append("restrictionId", restrictionId).toString();
     }
 
 }

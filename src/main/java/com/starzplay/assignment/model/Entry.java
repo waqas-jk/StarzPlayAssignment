@@ -1,19 +1,13 @@
 
 package com.starzplay.assignment.model;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -188,8 +182,6 @@ public class Entry {
     private String peg$programMediaAvailability;
     @JsonProperty("peg$testDefaultValue")
     private String peg$testDefaultValue;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("id")
     public String getId() {
@@ -751,36 +743,9 @@ public class Entry {
         this.peg$testDefaultValue = peg$testDefaultValue;
     }
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("id", id).append("guid", guid).append("updated", updated).append("title", title).append("description", description).append("added", added).append("approved", approved).append("credits", credits).append("descriptionLocalized", descriptionLocalized).append("displayGenre", displayGenre).append("editorialRating", editorialRating).append("imageMediaIds", imageMediaIds).append("isAdult", isAdult).append("languages", languages).append("longDescription", longDescription).append("longDescriptionLocalized", longDescriptionLocalized).append("programType", programType).append("ratings", ratings).append("seriesEpisodeNumber", seriesEpisodeNumber).append("seriesId", seriesId).append("shortDescription", shortDescription).append("shortDescriptionLocalized", shortDescriptionLocalized).append("tagIds", tagIds).append("tags", tags).append("thumbnails", thumbnails).append("titleLocalized", titleLocalized).append("tvSeasonEpisodeNumber", tvSeasonEpisodeNumber).append("tvSeasonId", tvSeasonId).append("tvSeasonNumber", tvSeasonNumber).append("year", year).append("media", media).append("peg$ExclusiveFrench", peg$ExclusiveFrench).append("peg$arAgeRating", peg$arAgeRating).append("peg$arContentRating", peg$arContentRating).append("peg$availableInSection", peg$availableInSection).append("peg$contentClassification", peg$contentClassification).append("peg$contractName", peg$contractName).append("peg$countryOfOrigin", peg$countryOfOrigin).append("peg$priorityLevel", peg$priorityLevel).append("peg$priorityLevelActionandAdventure", peg$priorityLevelActionandAdventure).append("peg$priorityLevelArabic", peg$priorityLevelArabic).append("peg$priorityLevelChildrenandFamily", peg$priorityLevelChildrenandFamily).append("peg$priorityLevelComedy", peg$priorityLevelComedy).append("peg$priorityLevelDisney", peg$priorityLevelDisney).append("peg$priorityLevelDisneyKids", peg$priorityLevelDisneyKids).append("peg$priorityLevelDrama", peg$priorityLevelDrama).append("peg$priorityLevelKids", peg$priorityLevelKids).append("peg$priorityLevelKidsAction", peg$priorityLevelKidsAction).append("peg$priorityLevelKidsFunandAdventure", peg$priorityLevelKidsFunandAdventure).append("peg$priorityLevelKidsMagicandDreams", peg$priorityLevelKidsMagicandDreams).append("peg$priorityLevelKidsPreschool", peg$priorityLevelKidsPreschool).append("peg$priorityLevelRomance", peg$priorityLevelRomance).append("peg$priorityLevelThriller", peg$priorityLevelThriller).append("peg$productCode", peg$productCode).append("peg$programMediaAvailability", peg$programMediaAvailability).append("peg$testDefaultValue", peg$testDefaultValue).append("additionalProperties", additionalProperties).toString();
-    }
-
-    @Override
-    public int hashCode() {
-        return new HashCodeBuilder().append(tvSeasonEpisodeNumber).append(peg$contractName).append(peg$ExclusiveFrench).append(longDescriptionLocalized).append(tvSeasonNumber).append(languages).append(peg$priorityLevelDisney).append(approved).append(updated).append(peg$priorityLevelKidsFunandAdventure).append(description).append(longDescription).append(year).append(titleLocalized).append(peg$priorityLevelRomance).append(peg$arContentRating).append(imageMediaIds).append(peg$priorityLevelComedy).append(peg$priorityLevelDisneyKids).append(editorialRating).append(peg$priorityLevelKidsAction).append(shortDescription).append(seriesEpisodeNumber).append(additionalProperties).append(descriptionLocalized).append(peg$priorityLevel).append(shortDescriptionLocalized).append(peg$priorityLevelChildrenandFamily).append(media).append(ratings).append(peg$priorityLevelDrama).append(peg$contentClassification).append(peg$priorityLevelKids).append(displayGenre).append(peg$testDefaultValue).append(peg$availableInSection).append(credits).append(peg$priorityLevelKidsPreschool).append(id).append(peg$priorityLevelKidsMagicandDreams).append(title).append(peg$productCode).append(peg$priorityLevelActionandAdventure).append(peg$programMediaAvailability).append(tagIds).append(isAdult).append(programType).append(tags).append(added).append(peg$priorityLevelArabic).append(thumbnails).append(tvSeasonId).append(guid).append(peg$countryOfOrigin).append(peg$arAgeRating).append(peg$priorityLevelThriller).append(seriesId).toHashCode();
-    }
-
-    @Override
-    public boolean equals(Object other) {
-        if (other == this) {
-            return true;
-        }
-        if ((other instanceof Entry) == false) {
-            return false;
-        }
-        Entry rhs = ((Entry) other);
-        return new EqualsBuilder().append(tvSeasonEpisodeNumber, rhs.tvSeasonEpisodeNumber).append(peg$contractName, rhs.peg$contractName).append(peg$ExclusiveFrench, rhs.peg$ExclusiveFrench).append(longDescriptionLocalized, rhs.longDescriptionLocalized).append(tvSeasonNumber, rhs.tvSeasonNumber).append(languages, rhs.languages).append(peg$priorityLevelDisney, rhs.peg$priorityLevelDisney).append(approved, rhs.approved).append(updated, rhs.updated).append(peg$priorityLevelKidsFunandAdventure, rhs.peg$priorityLevelKidsFunandAdventure).append(description, rhs.description).append(longDescription, rhs.longDescription).append(year, rhs.year).append(titleLocalized, rhs.titleLocalized).append(peg$priorityLevelRomance, rhs.peg$priorityLevelRomance).append(peg$arContentRating, rhs.peg$arContentRating).append(imageMediaIds, rhs.imageMediaIds).append(peg$priorityLevelComedy, rhs.peg$priorityLevelComedy).append(peg$priorityLevelDisneyKids, rhs.peg$priorityLevelDisneyKids).append(editorialRating, rhs.editorialRating).append(peg$priorityLevelKidsAction, rhs.peg$priorityLevelKidsAction).append(shortDescription, rhs.shortDescription).append(seriesEpisodeNumber, rhs.seriesEpisodeNumber).append(additionalProperties, rhs.additionalProperties).append(descriptionLocalized, rhs.descriptionLocalized).append(peg$priorityLevel, rhs.peg$priorityLevel).append(shortDescriptionLocalized, rhs.shortDescriptionLocalized).append(peg$priorityLevelChildrenandFamily, rhs.peg$priorityLevelChildrenandFamily).append(media, rhs.media).append(ratings, rhs.ratings).append(peg$priorityLevelDrama, rhs.peg$priorityLevelDrama).append(peg$contentClassification, rhs.peg$contentClassification).append(peg$priorityLevelKids, rhs.peg$priorityLevelKids).append(displayGenre, rhs.displayGenre).append(peg$testDefaultValue, rhs.peg$testDefaultValue).append(peg$availableInSection, rhs.peg$availableInSection).append(credits, rhs.credits).append(peg$priorityLevelKidsPreschool, rhs.peg$priorityLevelKidsPreschool).append(id, rhs.id).append(peg$priorityLevelKidsMagicandDreams, rhs.peg$priorityLevelKidsMagicandDreams).append(title, rhs.title).append(peg$productCode, rhs.peg$productCode).append(peg$priorityLevelActionandAdventure, rhs.peg$priorityLevelActionandAdventure).append(peg$programMediaAvailability, rhs.peg$programMediaAvailability).append(tagIds, rhs.tagIds).append(isAdult, rhs.isAdult).append(programType, rhs.programType).append(tags, rhs.tags).append(added, rhs.added).append(peg$priorityLevelArabic, rhs.peg$priorityLevelArabic).append(thumbnails, rhs.thumbnails).append(tvSeasonId, rhs.tvSeasonId).append(guid, rhs.guid).append(peg$countryOfOrigin, rhs.peg$countryOfOrigin).append(peg$arAgeRating, rhs.peg$arAgeRating).append(peg$priorityLevelThriller, rhs.peg$priorityLevelThriller).append(seriesId, rhs.seriesId).isEquals();
+        return new ToStringBuilder(this).append("id", id).append("guid", guid).append("updated", updated).append("title", title).append("description", description).append("added", added).append("approved", approved).append("credits", credits).append("descriptionLocalized", descriptionLocalized).append("displayGenre", displayGenre).append("editorialRating", editorialRating).append("imageMediaIds", imageMediaIds).append("isAdult", isAdult).append("languages", languages).append("longDescription", longDescription).append("longDescriptionLocalized", longDescriptionLocalized).append("programType", programType).append("ratings", ratings).append("seriesEpisodeNumber", seriesEpisodeNumber).append("seriesId", seriesId).append("shortDescription", shortDescription).append("shortDescriptionLocalized", shortDescriptionLocalized).append("tagIds", tagIds).append("tags", tags).append("thumbnails", thumbnails).append("titleLocalized", titleLocalized).append("tvSeasonEpisodeNumber", tvSeasonEpisodeNumber).append("tvSeasonId", tvSeasonId).append("tvSeasonNumber", tvSeasonNumber).append("year", year).append("media", media).append("peg$ExclusiveFrench", peg$ExclusiveFrench).append("peg$arAgeRating", peg$arAgeRating).append("peg$arContentRating", peg$arContentRating).append("peg$availableInSection", peg$availableInSection).append("peg$contentClassification", peg$contentClassification).append("peg$contractName", peg$contractName).append("peg$countryOfOrigin", peg$countryOfOrigin).append("peg$priorityLevel", peg$priorityLevel).append("peg$priorityLevelActionandAdventure", peg$priorityLevelActionandAdventure).append("peg$priorityLevelArabic", peg$priorityLevelArabic).append("peg$priorityLevelChildrenandFamily", peg$priorityLevelChildrenandFamily).append("peg$priorityLevelComedy", peg$priorityLevelComedy).append("peg$priorityLevelDisney", peg$priorityLevelDisney).append("peg$priorityLevelDisneyKids", peg$priorityLevelDisneyKids).append("peg$priorityLevelDrama", peg$priorityLevelDrama).append("peg$priorityLevelKids", peg$priorityLevelKids).append("peg$priorityLevelKidsAction", peg$priorityLevelKidsAction).append("peg$priorityLevelKidsFunandAdventure", peg$priorityLevelKidsFunandAdventure).append("peg$priorityLevelKidsMagicandDreams", peg$priorityLevelKidsMagicandDreams).append("peg$priorityLevelKidsPreschool", peg$priorityLevelKidsPreschool).append("peg$priorityLevelRomance", peg$priorityLevelRomance).append("peg$priorityLevelThriller", peg$priorityLevelThriller).append("peg$productCode", peg$productCode).append("peg$programMediaAvailability", peg$programMediaAvailability).append("peg$testDefaultValue", peg$testDefaultValue).toString();
     }
 
 }

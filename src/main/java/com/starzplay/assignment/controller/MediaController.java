@@ -51,6 +51,10 @@ public class MediaController {
 		
 		MovieMetadata metadata =  mediaService.getMovieMetadata();
 		
+		if(filter == null) {
+			throw new IllegalArgumentException("filter field is not present.");
+		}
+		
 		List<Entry> filteredMovies= null;
 		if(ValidationUtil.isValidLevel(level)) {
 			filteredMovies = filterService.getCensoredMovies(metadata.getEntries(), Level.valueOf(level));
