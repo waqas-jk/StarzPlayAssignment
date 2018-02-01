@@ -19,13 +19,12 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.starzplay.assignment.StarzPlayAssignmentApplication;
 import com.starzplay.assignment.model.Entry;
 import com.starzplay.assignment.model.Filter;
 import com.starzplay.assignment.model.Level;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = StarzPlayAssignmentApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class MediaControllerIT{
 
 	private static String MEDIA_URL= "/media?filter=%s&level=%s";
